@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+    <style>
+        .div1{
+           background-color: #ffe0b2;
+            text-align: center;
+            margin: auto;
+            border: 3px solid blanchedalmond;
+            width: 30%;
+            height: 30%;
+            padding-top: 40px;
+            padding-bottom: 80px;
+        }
+        .div2{
+            color: red;
+            text-align: center;
+            margin: auto;
+            padding-top: 20px;
+        }
+        
+    </style>
+</head>
+<body bgcolor="#FEA116">
+    {% block content %}
+    <div class="div1">
+        <h2>Registeration Form</h2>
+    <form style="color: black;" action="{% url 'register' %}" method="post">
+        {% csrf_token %}
+        
+        <input type="text" placeholder="first_name" name="first_name"><br>
+       
+        <input type="text" placeholder="last_name" name="last_name"><br>
+      
+        <input type="text" placeholder="user_name" name="user_name"><br>
+     
+        <input type="email" placeholder="xyz@gmail.com" name="email"><br>
+      
+        <input type="password" placeholder="password" name="password1"><br>
+      
+        <input type="password" placeholder="confirm password" name="password2"><br><br>
+        <button type="submit">Submit</button>
+
+
+    </form>
+    </div>
+    <div class="div2">
+        {% for message in messages %}
+        {{message}}
+        {% endfor %}
+    </div>   
+    {% endblock %}
+</body>
+</html>

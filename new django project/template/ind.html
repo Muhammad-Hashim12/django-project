@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index..html</title>
+</head>
+<body>
+    {% extends 'base.html' %}
+    {% block content %}
+    <h1>Hashim is from Mangalore</h1>
+    <h4>new heading</h4>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+         Porro molestiae corporis nostrum eius omnis dolorem repudiandae nam,
+          fugit iusto saepe ratione natus quidem ad id fuga vitae esse earum magni.</p>
+
+    <form action="add" method='post'>
+        {% csrf_token %}
+       
+        <label >num1: </label>
+        <input type="text" name="num1"><br>
+        <label >num2: </label>
+        <input type="text" name='num2'><br>
+        <button type="submit">submit</button><br>
+    </form>
+    {%endblock%}
+</body>
+</html>
